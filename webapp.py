@@ -3,6 +3,8 @@ import re
 import sqlite3
 import pandas as pd
 import pickle
+from streamlit_option_menu import option_menu
+
 
 st.set_page_config(page_title="Heart Disease", page_icon="fevicon.jpg", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
@@ -48,11 +50,30 @@ def delete_uesr(Email):
     conn.commit()
      
 
-menu = ["Home","Login","SignUp","Contact us"]
-choice = st.sidebar.selectbox("Menu",menu)
+with st.sidebar: 
+        choice = option_menu(
+                menu_title="Main menu",
+                options=["Home","Login","SignUp","Contact us"],
+                icons=["house","book","envelope"]
+                )
 
-if choice=="Home":
-    st.subheader("Home Page")
+if choice == "Home":
+    st.title("Heart Disease Prediction System")
+    st.text('''The Heart Disease Prediction System with Python Webapp is an advanced solution
+designed to enhance cardiovascular health monitoring through the integration of 
+machine learning and web technologies. Utilizing sophisticated algorithms
+implemented in Python, the system analyzes diverse health indicators, 
+including cholesterol levels, blood pressure, and medical history, 
+to predict the risk of heart disease. The accompanying web application provides
+an accessible interface for users to input their health data, receiving
+instantaneous predictions and personalized recommendations for preventive 
+measures. By harnessing the capabilities of predictive analytics, this system
+empowers individuals and healthcare professionals to proactively manage 
+cardiovascular health, enabling early detection, intervention, and lifestyle
+adjustments. This integrated approach contributes to the prevention of heart
+disease, promoting better overall cardiac health and reducing the burden on 
+healthcare systems.''')
+
 if choice=="SignUp":
         Fname = st.text_input("First Name")
         Lname = st.text_input("Last Name")
@@ -141,7 +162,7 @@ if choice=="Login":
                         EXERCISEangina=1
                     STdepression=float(st.slider('STdepression',0.0,6.2))
                     slopofst=int(st.slider( "Slop of st",1,3))
-                    vesselsfluro=st.radio("select  Exercise Angina:",('Low','Mid','High'))
+                    vesselsfluro=st.radio("select vesselsfluro",('Low','Mid','High'))
                     if vesselsfluro=="Low":
                         vesselsfluro=0
                     elif vesselsfluro=="Mid":
