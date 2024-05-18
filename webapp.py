@@ -125,60 +125,60 @@ if choice=="Login":
                     choice2 = st.selectbox("Select ML",menu2)
                     
                     
-                    Age=int(st.slider('age',0,90))
+                    Age1=int(st.slider('age',0,90))
                     sex=st.selectbox("Selecr Sex",["Male","Female"])
                     if sex=="Male":
-                        sex=0
+                        sex1=0
                     else:
-                        sex=1
+                        sex1=1
                     Chestpaintype=st.selectbox("chest pain",["low","mid","High","very High"])
                     if Chestpaintype=="low":
-                        Chestpaintype=1
+                        Chestpaintype1=1
                     elif Chestpaintype=="mid":
-                        Chestpaintype=2
+                        Chestpaintype1=2
                     elif Chestpaintype=="High":
-                        Chestpaintype=3
+                        Chestpaintype1=3
                     elif Chestpaintype=="very high":
-                        Chestpaintype=4
-                    BP=int(st.slider('BP',94,200))
-                    cholesterol=float(st.slider('cholesterol',126.0,564.0))
+                        Chestpaintype1=4
+                    BP1=int(st.slider('BP',94,200))
+                    cholesterol1=float(st.slider('cholesterol',126.0,564.0))
                     FBSover=st.selectbox("select FBS OVER",('YES','no'))
                     if FBSover=="YES":
-                        FBSover=0
+                        FBSover1=0
                     elif FBSover=="no":
-                        FBSover=1
+                        FBSover1=1
                     EKGresult=st.selectbox("EKG result",('low','mid','high'))
                     if EKGresult=="low":
-                        EKGresult=0
+                        EKGresult1=0
                     elif EKGresult=="mid":
-                        EKGresult=1
+                        EKGresult1=1
                     elif EKGresult=="high":
-                          EKGresult=2    
-                    MAXHR=int(st.slider('MAXHR',71,202))
+                        EKGresult1=2    
+                    MAXHR1=int(st.slider('MAXHR',71,202))
                     EXERCISEangina=st.radio("select  Exercise Angina:",('yes','no'))
                     if EXERCISEangina=="yes":
-                        EXERCISEangina=0
+                        EXERCISEangina1=0
                     elif EXERCISEangina=="no":
-                        EXERCISEangina=1
-                    STdepression=float(st.slider('STdepression',0.0,6.2))
-                    slopofst=int(st.slider( "Slop of st",1,3))
+                        EXERCISEangina1=1
+                    STdepression1=float(st.slider('STdepression',0.0,6.2))
+                    slopofst1=int(st.slider( "Slop of st",1,3))
                     vesselsfluro=st.radio("select vesselsfluro",('Low','Mid','High'))
                     if vesselsfluro=="Low":
-                        vesselsfluro=0
+                        vesselsfluro1=0
                     elif vesselsfluro=="Mid":
-                        vesselsfluro=1
+                        vesselsfluro1=1
                     elif vesselsfluro=="High":
-                         vesselsfluro=3    
+                         vesselsfluro1=3    
                     Thallium=st.selectbox("select Thallium:",('low','mid','high'))
                     if Thallium=="low":
-                        Thallium=3
+                        Thallium1=3
                     elif Thallium=="mid":
-                        Thallium=6
+                        Thallium1=6
                     elif Thallium=="high":
-                         Thallium=7 
+                         Thallium1=7 
                          
-                    my_array=[Age,sex,Chestpaintype,BP,cholesterol,FBSover,EKGresult,MAXHR,
-                              EXERCISEangina,STdepression,slopofst,vesselsfluro,Thallium] 
+                    my_array=[Age1,sex1,Chestpaintype1,BP1,cholesterol1,FBSover1,EKGresult1,MAXHR1,
+                              EXERCISEangina1,STdepression1,slopofst1,vesselsfluro1,Thallium1] 
                     predict=st.button("predict")
                     model=pickle.load(open("model.pkl",'rb'))
                     
