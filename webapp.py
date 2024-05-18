@@ -131,14 +131,14 @@ if choice=="Login":
                         sex1=0
                     else:
                         sex1=1
-                    Chestpaintype=st.selectbox("chest pain",["low","mid","High","VHigh"])
+                    Chestpaintype=st.selectbox("chest pain",["low","mid","High","Very High"])
                     if Chestpaintype=="low":
                         Chestpaintype1=1
                     elif Chestpaintype=="mid":
                         Chestpaintype1=2
                     elif Chestpaintype=="High":
                         Chestpaintype1=3
-                    elif Chestpaintype=="Vhigh":
+                    elif Chestpaintype=="Very High":
                         Chestpaintype1=4
                     BP1=int(st.slider('BP',94,200))
                     cholesterol1=float(st.slider('cholesterol',126.0,564.0))
